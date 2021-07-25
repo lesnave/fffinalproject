@@ -53,7 +53,6 @@ async function main(){
     const [ , , file, stopWordCheck, suffixCheck] = process.argv
     const stopList = await parseFile('stopwords.txt').then(processStopFile);
     const processedInput = await parseFile(file).then(processInputFile);
-    console.log(processedInput);
 
     const wordCountObject = wordCounter(processedInput, stopList, stopWordCheck === 'true', suffixCheck ==='true');
     const sortedList = sortList(wordCountObject);
